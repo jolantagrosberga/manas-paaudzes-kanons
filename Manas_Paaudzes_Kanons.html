@@ -122,18 +122,16 @@
   }
 
   /* Canon text output */
-  .canon-out{
-    background:#FBF6EC;border:1px dashed var(--accent-soft);
-    border-radius:var(--radius-sm);padding:16px 18px;margin-top:6px;
+  .step1-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;
   }
-  .canon-out h3{margin:0 0 10px;color:var(--ink);font-size:15.5px;}
-  .canon-out ul{margin:0;padding-left:18px;}
-  .canon-out li{margin-bottom:6px;font-size:14.5px;}
-  .canon-out .closing{margin-top:12px;font-size:14.5px;font-style:italic;color:var(--ink-soft);}
+  #canon-list{margin:0;padding-left:18px;}
+  #canon-list li{margin-bottom:6px;font-size:14.5px;}
+  #canon-closing{margin:14px 0 4px;font-size:14.5px;font-style:italic;color:var(--ink-soft);}
   .civ-name{font-weight:700;}
 
   /* Comparison tracks */
-  .compare{margin-top:26px;}
+  .compare{margin-top:0;}
   .compare h3{color:var(--ink);font-size:15.5px;margin:0 0 4px;}
   .compare .note{font-size:12.5px;color:var(--muted);margin:0 0 16px;}
   .track-row{margin-bottom:20px;}
@@ -266,6 +264,9 @@
   }
   footer.credit strong{color:var(--ink-soft);}
 
+  @media (max-width:860px){
+    .step1-grid{grid-template-columns:1fr;}
+  }
   @media (max-width:640px){
     .card{padding:20px 16px;}
     .toolbar{gap:10px;}
@@ -289,19 +290,22 @@
 
   <!-- STEP 1 -->
   <section class="panel active" id="panel-1">
-    <div class="card">
-      <h2>Pieci jautājumi par skaistumu</h2>
-      <p class="lead">Pabīdi slīdņus tā, kā, tavuprāt, mūsdienās (vai tavā paaudzē) tiek izprasts skaistums un estētika. Nav pareizu vai nepareizu atbilžu.</p>
+    <div class="step1-grid">
+      <div class="card">
+        <h2>Pieci jautājumi par skaistumu</h2>
+        <p class="lead">Pabīdi slīdņus tā, kā, tavuprāt, mūsdienās (vai tavā paaudzē) tiek izprasts skaistums un estētika. Nav pareizu vai nepareizu atbilžu.</p>
+        <div id="axes"></div>
+      </div>
 
-      <div id="axes"></div>
-
-      <div class="canon-out">
-        <h3>Tavs kanons:</h3>
+      <div class="card">
+        <h2>Tavs kanons</h2>
         <ul id="canon-list"></ul>
         <p class="closing" id="canon-closing"></p>
         <div class="inspire-grid" id="inspire-step1"></div>
       </div>
+    </div>
 
+    <div class="card">
       <div class="compare">
         <h3>Salīdzinājums ar antīkajām kultūrām</h3>
         <p class="note">Vienkāršots, mācību nolūkiem veidots salīdzinājums — antīko kultūru novietojums skalā ir aptuvens, nevis zinātniski precīzs mērījums.</p>
