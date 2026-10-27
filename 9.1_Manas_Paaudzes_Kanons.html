@@ -50,7 +50,7 @@
   }
   h1{
     color:var(--ink);
-    font-size:clamp(24px,4vw,34px);
+    font-size:34px;
     margin:0 0 8px;
     font-weight:700;
   }
@@ -180,10 +180,7 @@
     padding:8px 10px;font-size:12.5px;font-weight:700;color:var(--ink-soft);
     background:#FBF6EC;
   }
-  @media (max-width:520px){
-    .inspire-grid{grid-template-columns:1fr;}
-    .inspire-grid img{height:170px;}
-  }
+
 
   .style-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
 
@@ -217,10 +214,7 @@
     color:var(--text);align-self:center;
   }
   .timer-callout strong{color:var(--accent);}
-  @media (max-width:560px){
-    .timer-card{flex-direction:column;align-items:flex-start;}
-    .timer-clock{align-self:center;}
-  }
+
   .style-tab{
     font-family:inherit;font-size:14px;font-weight:700;
     padding:9px 16px;border-radius:10px;border:1.5px solid var(--line);
@@ -264,33 +258,98 @@
   }
   footer.credit strong{color:var(--ink-soft);}
 
-  @media (max-width:860px){
-    .step1-grid{grid-template-columns:1fr;}
-  }
-  @media (max-width:640px){
-    .card{padding:20px 16px;}
-    .toolbar{gap:10px;}
-    .toolbar .btn.small{margin-left:0;}
-  }
+
+
+  /* ═════════ 16:9 IZKĀRTOJUMS ═════════ */
+  html,body{width:100%;height:100%;overflow:hidden;}
+  body{padding:0 !important;background:#F3EDE0;}
+  #app{position:absolute;top:0;left:0;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;
+    background:linear-gradient(180deg,#FFFDF8 0%,#FBF6EC 100%);padding:16px 26px 20px;display:flex;flex-direction:column;}
+  .wrap{max-width:none;margin:0;height:100%;display:flex;flex-direction:column;}
+  header.top{display:flex;align-items:center;gap:22px;text-align:left;margin-bottom:14px;flex:none;}
+  header.top .ttl{flex:none;}
+  .eyebrow{margin-bottom:4px;font-size:13px;}
+  h1{font-size:34px;margin:0;}
+  .sub{margin:0;max-width:440px;font-size:15px;line-height:1.4;}
+  .steps{margin:0 0 0 auto;flex-wrap:nowrap;}
+  .step-btn{font-size:16px;padding:10px 20px;}
+  #fsBtn{font-family:inherit;font-size:15px;font-weight:700;padding:10px 18px;border-radius:999px;cursor:pointer;
+    background:#fff;color:var(--ink);border:1.5px solid var(--ink);white-space:nowrap;transition:background .2s,color .2s;}
+  #fsBtn:hover{background:var(--ink);color:#fff;}
+  .panel{flex:1;min-height:0;}
+  .panel.active{display:flex;flex-direction:column;}
+  footer.credit{display:none;}
+  .card{margin-bottom:0;padding:20px 22px;}
+  .card h2{font-size:22px;}
+  .card .lead{font-size:15px;margin-bottom:14px;}
+
+  /* 1. solis — trīs kolonnas */
+  .s1-grid{flex:1;min-height:0;display:grid;grid-template-columns:420px 1fr 500px;gap:20px;}
+  .s1-grid > .card{min-height:0;overflow:auto;}
+  .axis{margin-bottom:20px;}
+  .axis-labels{font-size:14.5px;}
+  #canon-list li{font-size:16px;margin-bottom:8px;}
+  #canon-closing{font-size:16px;}
+  .inspire-grid img{height:170px;}
+  .inspire-grid figcaption{font-size:13.5px;}
+  .compare-card{display:flex;flex-direction:column;}
+  .compare h3{font-size:19px;}
+  .compare .note{font-size:13px;}
+  .track-row{margin-bottom:16px;}
+  .track-title{font-size:14px;}
+  .legend{font-size:13.5px;}
+  .compare-card .nav-row{margin-top:auto;padding-top:14px;}
+  .btn{font-size:16px;}
+
+  /* 2. solis — kreisā info kolonna + labā zīmēšana */
+  .s2-grid{flex:1;min-height:0;display:grid;grid-template-columns:440px 1fr;gap:20px;}
+  .s2-side{display:flex;flex-direction:column;gap:10px;min-height:0;overflow:auto;padding-right:4px;}
+  .s2-side .civ-banner{margin:0;font-size:14.5px;flex-wrap:nowrap;align-items:flex-start;}
+  .s2-side .civ-banner .swatch{margin-top:3px;}
+  .s2-side .civ-banner > span:last-child{flex:1;}
+  .s2-side .inspire-grid{margin:0;gap:10px;}
+  .s2-side .inspire-grid img{height:100px;}
+  .s2-side .timer-card{margin:0;flex-direction:column;gap:10px;padding:14px 16px;}
+  .s2-side .timer-clock{flex-direction:row;gap:14px;min-width:0;justify-content:flex-start;flex-wrap:wrap;}
+  .s2-side .timer-display{font-size:34px;}
+  .s2-side .timer-status{text-align:left;max-width:none;flex-basis:100%;font-size:13px;}
+  .s2-side .timer-callout{font-size:14px;min-width:0;}
+  .s2-side .technique-desc{margin:0;font-size:14.5px;}
+  .s2-side .sketch-hint{margin:0;font-size:13.5px;}
+  .s2-side .nav-row{margin-top:auto;justify-content:space-between;}
+  .s2-main{display:flex;flex-direction:column;min-height:0;min-width:0;}
+  .s2-main h2{color:var(--ink);font-size:22px;margin:0 0 4px;}
+  .s2-main .lead{color:var(--muted);font-size:15px;margin:0 0 10px;}
+  .s2-main .style-tabs{margin-bottom:12px;}
+  .style-tab{font-size:15.5px;padding:10px 18px;}
+  .style-panel.active{display:flex;flex-direction:column;align-items:center;flex:1;min-height:0;}
+  .style-panel .canvas-shell{height:550px;width:860px;flex:none;margin-bottom:12px;}
+  canvas.draw-canvas{width:860px;height:550px;}
+  .style-panel .toolbar{width:860px;padding:10px 14px;}
+  .tool-label{font-size:13.5px;}
+  .swatch-btn{width:30px;height:30px;}
 </style>
 </head>
 <body>
+<div id="app">
 <div class="wrap">
 
   <header class="top">
-    <span class="eyebrow">9.1. Skaistums un estētika senajā pasaulē</span>
-    <h1>Manas Paaudzes Kanons</h1>
+    <div class="ttl">
+      <span class="eyebrow">9.1. Skaistums un estētika senajā pasaulē</span>
+      <h1>Manas Paaudzes Kanons</h1>
+    </div>
     <p class="sub">Uzbūvē sava laikmeta skaistuma kanonu — un pēc tam radi mākslas darbu, kas to atspoguļo trīs dažādās tehnikās.</p>
+    <div class="steps">
+      <button class="step-btn active" data-step="1"><span class="num">1</span> Uzbūvē kanonu</button>
+      <button class="step-btn" data-step="2"><span class="num">2</span> Radi mākslas darbu</button>
+    </div>
+    <button id="fsBtn" type="button">⛶ Atvērt pilnekrānu</button>
   </header>
-
-  <div class="steps">
-    <button class="step-btn active" data-step="1"><span class="num">1</span> Uzbūvē kanonu</button>
-    <button class="step-btn" data-step="2"><span class="num">2</span> Radi mākslas darbu</button>
-  </div>
 
   <!-- STEP 1 -->
   <section class="panel active" id="panel-1">
-    <div class="step1-grid">
+    <div class="s1-grid">
       <div class="card">
         <h2>Pieci jautājumi par skaistumu</h2>
         <p class="lead">Pabīdi slīdņus tā, kā, tavuprāt, mūsdienās (vai tavā paaudzē) tiek izprasts skaistums un estētika. Nav pareizu vai nepareizu atbilžu.</p>
@@ -303,97 +362,99 @@
         <p class="closing" id="canon-closing"></p>
         <div class="inspire-grid" id="inspire-step1"></div>
       </div>
-    </div>
 
-    <div class="card">
-      <div class="compare">
-        <h3>Salīdzinājums ar antīkajām kultūrām</h3>
-        <p class="note">Vienkāršots, mācību nolūkiem veidots salīdzinājums — antīko kultūru novietojums skalā ir aptuvens, nevis zinātniski precīzs mērījums.</p>
-        <div id="tracks"></div>
-        <div class="legend" id="legend"></div>
+      <div class="card compare-card">
+        <div class="compare">
+          <h3>Salīdzinājums ar antīkajām kultūrām</h3>
+          <p class="note">Vienkāršots, mācību nolūkiem veidots salīdzinājums — antīko kultūru novietojums skalā ir aptuvens, nevis zinātniski precīzs mērījums.</p>
+          <div id="tracks"></div>
+          <div class="legend" id="legend"></div>
+        </div>
+        <div class="nav-row">
+          <button class="btn" id="to-step-2">Tālāk: radi mākslas darbu →</button>
+        </div>
       </div>
-    </div>
-
-    <div class="nav-row">
-      <button class="btn" id="to-step-2">Tālāk: radi mākslas darbu →</button>
     </div>
   </section>
 
   <!-- STEP 2 -->
   <section class="panel" id="panel-2">
-    <div class="card">
-      <h2>Radi mākslas darbu pēc sava kanona</h2>
-      <p class="lead">Uzzīmē mākslas darbu, kas atspoguļo tavu izveidoto kanonu. Izvēlies vienu no trim tehnikām — vari brīvi pārslēgties, nezaudējot iepriekš zīmēto.</p>
+    <div class="s2-grid">
+      <div class="s2-side">
+        <div class="civ-banner">
+          <span class="swatch" id="civ-swatch"></span>
+          <span>Tavam kanonam vistuvākā antīkā estētika: <span class="civ-name" id="civ-name">—</span> — krāsu paletes aerosoliem un freskai pielāgotas šai estētikai.</span>
+        </div>
+        <div class="inspire-grid" id="inspire-step2"></div>
 
-      <div class="civ-banner">
-        <span class="swatch" id="civ-swatch"></span>
-        <span>Tavam kanonam vistuvākā antīkā estētika: <span class="civ-name" id="civ-name">—</span> — krāsu paletes aerosoliem un freskai pielāgotas šai estētikai.</span>
-      </div>
-      <div class="inspire-grid" id="inspire-step2"></div>
-
-      <div class="timer-card">
-        <div class="timer-clock">
-          <div class="timer-display" id="timer-display">00:00</div>
-          <div class="timer-controls">
-            <button class="btn small" id="timer-stop" disabled>Apturēt</button>
-            <button class="btn secondary small" id="timer-reset">Atiestatīt</button>
+        <div class="timer-card">
+          <div class="timer-clock">
+            <div class="timer-display" id="timer-display">00:00</div>
+            <div class="timer-controls">
+              <button class="btn small" id="timer-stop" disabled>Apturēt</button>
+              <button class="btn secondary small" id="timer-reset">Atiestatīt</button>
+            </div>
+            <p class="timer-status" id="timer-status">Sāc zīmēt, lai sāktos laiks</p>
           </div>
-          <p class="timer-status" id="timer-status">Sāc zīmēt, lai sāktos laiks</p>
+          <p class="timer-callout">⏱️ <strong>Strādā ātri!</strong> Senatnē freskas gleznotājam bija tikai dažas stundas, kamēr apmetums vēl mitrs, un ielu mākslinieks arī strādā ātri, jo darbs bieži top publiskā vietā. Mēģini pabeigt savu darbu, kamēr skaitās laiks, un izjūti šo pašu spiedienu!</p>
         </div>
-        <p class="timer-callout">⏱️ <strong>Strādā ātri!</strong> Senatnē freskas gleznotājam bija tikai dažas stundas, kamēr apmetums vēl mitrs, un ielu mākslinieks arī strādā ātri, jo darbs bieži top publiskā vietā. Mēģini pabeigt savu darbu, kamēr skaitās laiks, un izjūti šo pašu spiedienu!</p>
-      </div>
 
-      <div class="style-tabs">
-        <button class="style-tab active" data-style="skice">✏️ Skice (grafīts / ogle)</button>
-        <button class="style-tab" data-style="akvarelis">🎨 Krāsu aerosoli</button>
-        <button class="style-tab" data-style="freska">🏛️ Freska (sienas gleznojums)</button>
-      </div>
+        <p class="technique-desc" id="technique-desc"></p>
+        <p class="sketch-hint" id="sketch-hint">💡 Kad skice gatava, pārslēdzies uz krāsu aerosoliem vai fresku — tā parādīsies kā gaišs pamats, uz kura varēsi zīmēt tālāk. Laika skaitīšana sākas tikai krāsu tehnikās.</p>
 
-      <p class="technique-desc" id="technique-desc"></p>
-      <p class="sketch-hint" id="sketch-hint">💡 Kad skice gatava, pārslēdzies uz krāsu aerosoļiem vai fresku — tā parādīsies kā gaišs pamats, uz kura varēsi zīmēt tālāk. Laika skaitīšana sākas tikai krāsu tehnikās.</p>
-
-      <!-- SKICE -->
-      <div class="style-panel active" id="style-skice">
-        <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-skice" width="1000" height="640"></canvas></div>
-        <div class="toolbar">
-          <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-skice"></div></div>
-          <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="2" max="60" value="6" id="size-skice"></div>
-          <button class="btn secondary small" data-clear="skice">Notīrīt</button>
-          <button class="btn small" data-download="skice">⭳ Lejupielādēt</button>
+        <div class="nav-row">
+          <button class="btn secondary" id="to-step-1">← Atpakaļ uz kanonu</button>
+          <button class="btn secondary" id="reset-all">Sākt no jauna</button>
         </div>
       </div>
 
-      <!-- AKVARELIS -->
-      <div class="style-panel" id="style-akvarelis">
-        <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-akvarelis" width="1000" height="640"></canvas></div>
-        <div class="toolbar">
-          <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-akvarelis"></div><input type="color" id="custom-akvarelis" value="#2F6FED"></div>
-          <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="8" max="45" value="20" id="size-akvarelis"></div>
-          <div class="tool-group"><span class="tool-label">Caurspīdīgs ↔ Blīvs</span><input type="range" class="brush-size" min="4" max="60" value="12" id="opacity-akvarelis"></div>
-          <button class="btn secondary small" data-clear="akvarelis">Notīrīt</button>
-          <button class="btn small" data-download="akvarelis">⭳ Lejupielādēt</button>
+      <div class="card s2-main">
+        <h2>Radi mākslas darbu pēc sava kanona</h2>
+        <p class="lead">Uzzīmē mākslas darbu, kas atspoguļo tavu izveidoto kanonu. Izvēlies vienu no trim tehnikām — vari brīvi pārslēgties, nezaudējot iepriekš zīmēto.</p>
+
+        <div class="style-tabs">
+          <button class="style-tab active" data-style="skice">✏️ Skice (grafīts / ogle)</button>
+          <button class="style-tab" data-style="akvarelis">🎨 Krāsu aerosoli</button>
+          <button class="style-tab" data-style="freska">🏛️ Freska (sienas gleznojums)</button>
+        </div>
+
+        <!-- SKICE -->
+        <div class="style-panel active" id="style-skice">
+          <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-skice" width="1000" height="640"></canvas></div>
+          <div class="toolbar">
+            <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-skice"></div></div>
+            <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="2" max="60" value="6" id="size-skice"></div>
+            <button class="btn secondary small" data-clear="skice">Notīrīt</button>
+            <button class="btn small" data-download="skice">⭳ Lejupielādēt</button>
+          </div>
+        </div>
+
+        <!-- AKVARELIS -->
+        <div class="style-panel" id="style-akvarelis">
+          <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-akvarelis" width="1000" height="640"></canvas></div>
+          <div class="toolbar">
+            <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-akvarelis"></div><input type="color" id="custom-akvarelis" value="#2F6FED"></div>
+            <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="8" max="45" value="20" id="size-akvarelis"></div>
+            <div class="tool-group"><span class="tool-label">Caurspīdīgs ↔ Blīvs</span><input type="range" class="brush-size" min="4" max="60" value="12" id="opacity-akvarelis"></div>
+            <button class="btn secondary small" data-clear="akvarelis">Notīrīt</button>
+            <button class="btn small" data-download="akvarelis">⭳ Lejupielādēt</button>
+          </div>
+        </div>
+
+        <!-- FRESKA -->
+        <div class="style-panel" id="style-freska">
+          <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-freska" width="1000" height="640"></canvas></div>
+          <div class="toolbar">
+            <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-freska"></div><input type="color" id="custom-freska" value="#B33F1E"></div>
+            <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="3" max="50" value="24" id="size-freska"></div>
+            <button class="btn secondary small" data-clear="freska">Notīrīt</button>
+            <button class="btn small" data-download="freska">⭳ Lejupielādēt</button>
+          </div>
         </div>
       </div>
-
-      <!-- FRESKA -->
-      <div class="style-panel" id="style-freska">
-        <div class="canvas-shell"><canvas class="draw-canvas" id="canvas-freska" width="1000" height="640"></canvas></div>
-        <div class="toolbar">
-          <div class="tool-group"><span class="tool-label">Krāsa</span><div class="swatches" id="swatches-freska"></div><input type="color" id="custom-freska" value="#B33F1E"></div>
-          <div class="tool-group"><span class="tool-label">Ota</span><input type="range" class="brush-size" min="3" max="50" value="24" id="size-freska"></div>
-          <button class="btn secondary small" data-clear="freska">Notīrīt</button>
-          <button class="btn small" data-download="freska">⭳ Lejupielādēt</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="nav-row" style="justify-content:space-between;">
-      <button class="btn secondary" id="to-step-1">← Atpakaļ uz kanonu</button>
-      <button class="btn secondary" id="reset-all">Sākt no jauna</button>
     </div>
   </section>
-
-  <footer class="credit"><strong>VisaSkola.lv</strong> · 9. klase · 9.1. Skaistuma un estētikas izpratne senajā pasaulē un antīkajā laikmetā</footer>
+</div>
 </div>
 
 <script>
@@ -988,6 +1049,37 @@
     goStep(1);
   });
 
+})();
+</script>
+
+<script>
+/* ── 16:9 mērogošana un pilnekrāns ── */
+(function(){
+  const app = document.getElementById('app');
+  function fitApp(){
+    const W = window.innerWidth, H = window.innerHeight;
+    const sc = Math.min(W/1600, H/900);
+    app.style.transform = 'scale(' + sc + ')';
+    app.style.left = Math.max(0,(W-1600*sc)/2) + 'px';
+    app.style.top  = Math.max(0,(H-900*sc)/2) + 'px';
+  }
+  window.addEventListener('resize', fitApp); fitApp();
+  const btn = document.getElementById('fsBtn');
+  function isFs(){ return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+  function fallback(){ if(confirm('Pilnekrāna režīms šajā logā nav pieejams. Atvērt rīku jaunā cilnē?')) window.open(location.href,'_blank'); }
+  function toggle(){
+    const el = document.documentElement;
+    try{
+      if(isFs()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      else if(el.requestFullscreen) el.requestFullscreen().catch(fallback);
+      else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      else fallback();
+    }catch(e){ fallback(); }
+  }
+  function upd(){ btn.textContent = isFs() ? '✕ Iziet no pilnekrāna' : '⛶ Atvērt pilnekrānu'; setTimeout(fitApp, 60); }
+  btn.addEventListener('click', toggle);
+  document.addEventListener('fullscreenchange', upd);
+  document.addEventListener('webkitfullscreenchange', upd);
 })();
 </script>
 </body>
